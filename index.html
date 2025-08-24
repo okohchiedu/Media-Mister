@@ -135,17 +135,19 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
         <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok" />
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" />
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" 
-          alt="Facebook" width="40" height="40" />
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" 
-         alt="Twitter" width="40" height="40" />
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" 
+             alt="Facebook" width="40" height="40" 
+             style="filter: invert(27%) sepia(84%) saturate(7446%) hue-rotate(203deg) brightness(96%) contrast(104%);" />
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" 
+             alt="Twitter" width="40" height="40" 
+             style="filter: invert(35%) sepia(87%) saturate(1239%) hue-rotate(176deg) brightness(95%) contrast(99%);" />
       </div>
     </div>
 
     <!-- Official Media Mister Banner -->
     <div class="banner">
       <a href="https://www.mediamister.com/#a_aid=68a703815813e&amp;a_bid=ffc2864d" target="_blank">
-        <img src="//affiliates.mediamister.com/accounts/default1/7hwb5fwx/ffc2864d.jpg" 
+        <img src="https://affiliates.mediamister.com/accounts/default1/7hwb5fwx/ffc2864d.jpg" 
              alt="Media Mister" title="Media Mister" width="728" height="90" />
       </a>
       <img style="border:0" 
@@ -154,7 +156,7 @@
     </div>
 
     <!-- Formspree form -->
-    <form action="https://formspree.io/f/manogppb"method="POST" onsubmit="redirectToOffer()">
+    <form action="https://formspree.io/f/manogppb" method="POST" id="emailForm">
       <input type="email" name="email" placeholder="Enter your email" required>
       <button type="submit">Get Instant Access</button>
     </form>
@@ -165,11 +167,19 @@
   </div>
 
   <script>
-    function redirectToOffer() {
-      setTimeout(function() {
-        window.location.href = "https://www.mediamister.com/#68a703815813e"; // Your affiliate link
-      }, 800);
-    }
+    document.getElementById("emailForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      var form = this;
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        window.location.href = "https://www.mediamister.com/#68a703815813e";
+      }).catch(error => {
+        alert("Something went wrong. Please try again.");
+      });
+    });
   </script>
 </body>
 </html>
