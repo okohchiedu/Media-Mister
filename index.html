@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LC18BQK8GF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LC18BQK8GF');
+</script>
   <title>Skyrocket Your Social Media Followers & Engagement</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -146,10 +154,11 @@
     <!-- Official Media Mister Banner -->
     <div class="banner">
       <p style="margin-bottom:10px; font-weight:600;">Start growing your social accounts today with Media Mister — the tool I personally recommend!</p>
-      <a href="https://www.mediamister.com/#a_aid=68a703815813e&amp;a_bid=ffc2864d" target="_blank">
-        <img src="https://affiliates.mediamister.com/accounts/default1/7hwb5fwx/ffc2864d.jpg" 
-             alt="Media Mister" title="Media Mister" width="728" height="90" />
-      </a>
+     <a href="https://www.mediamister.com/#a_aid=68a703815813e&a_bid=ffc2864d" 
+   target="_blank"
+   onclick="gtag('event','affiliate_click',{ 'event_category':'Affiliate','event_label':'Media Mister Banner'});">
+   <img src="https://affiliates.mediamister.com/accounts/default1/7hwb5fwx/ffc2864d.jpg" alt="Media Mister"/>
+</a>
       <img style="border:0" 
            src="https://affiliates.mediamister.com/scripts/7hwi5fwx?a_aid=68a703815813e&amp;a_bid=ffc2864d" 
            width="1" height="1" alt="" />
@@ -160,6 +169,12 @@
       <input type="email" name="email" placeholder="Enter your email" required>
       <button type="submit">Get My Free Guide & Grow Now</button>
     </form>
+    <script>
+document.getElementById("emailForm").addEventListener("submit", function(e) {
+  gtag('event','form_submit',{'event_category':'Lead','event_label':'Email Form'});
+});
+</script>
+
 
     <div class="footer">
       <p>Limited spots for this free guide — claim yours today! No spam. Unsubscribe anytime.</p>
